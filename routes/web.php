@@ -27,7 +27,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
 // Not Login User
 Route::group(['as' => 'frontend.', 'namespace' => 'Frontend'], function () {
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    Route::get('/', 'FrontendController@welcome')->name('welcome');
 });
