@@ -18,6 +18,7 @@ class PermissionsSeeder extends Seeder
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
         $roleAdmin = Role::create(['name' => 'admin']);
+        $roleMember = Role::create(['name' => 'member']);
         $roleGuest = Role::create(['name' => 'guest']);
         // create demo users
         $user = Factory(App\User::class)->create([
@@ -27,11 +28,19 @@ class PermissionsSeeder extends Seeder
         ]);
         $user->assignRole($roleAdmin);
 
-        $user = Factory(App\User::class)->create([
-            'name' => 'Guest',
-            'email' => 'guest@example.com',
-            'password' => Hash::make('password'),
-        ]);
-        $user->assignRole($roleGuest);
+//        $user = Factory(App\User::class)->create([
+//            'name' => 'Member',
+//            'email' => 'member@example.com',
+//            'password' => Hash::make('password'),
+//        ]);
+//        $user->assignRole($roleMember);
+//
+//        $user = Factory(App\User::class)->create([
+//            'name' => 'Member',
+//            'email' => 'member@example.com',
+//            'password' => Hash::make('password'),
+//        ]);
+//        $user->assignRole($roleGuest);
+
     }
 }

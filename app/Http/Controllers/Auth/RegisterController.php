@@ -32,6 +32,11 @@ class RegisterController extends Controller
     protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
+     * Registered User has role "guest"
+     */
+    protected $userFirstRole = "guest";
+
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -64,10 +69,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $user->syncRoles($this->userFirstRole);
+        return $user;
+
     }
 }
