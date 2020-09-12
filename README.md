@@ -1,7 +1,7 @@
 ## This is Laravel Starter Kit
 Functions
 - include Spatie Laravel permission with route/web.php and PermisisonsSeeder.php(sample)
-- Separete Admin, Frontend Directory with Controller, view.
+- Separete Admin, Frontend Directory  Controller, view.
 
 ### Setup
 ~~~
